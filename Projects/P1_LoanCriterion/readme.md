@@ -81,7 +81,7 @@ You can train a new model using 'Model_Building/' contents, which creates a mode
 Visit [http://localhost:5000](http://localhost:5000) in your browser.
 
 ---
-
+## HINT: It's a brave new world of Agentic AI. Use GitHub Copilot in your Visual Studio Code to summarise the project and guide you to run, modify, improve, etc. 
 ## Future Improvements
 
 - Dockerize the project for easier deployment (planned for version 2)
