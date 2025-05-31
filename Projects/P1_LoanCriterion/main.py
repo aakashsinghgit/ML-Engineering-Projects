@@ -15,7 +15,7 @@ model = pickle.load(open('model.pkl', 'rb')) # loading the trained model
 
 ENV = 'dev'
 app.debug = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:1qazxsw2@localhost:3306/login_store'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:yourpass@localhost:3306/login_store'
 app.config['SECRET_KEY'] = 'giveanysceretkey'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
