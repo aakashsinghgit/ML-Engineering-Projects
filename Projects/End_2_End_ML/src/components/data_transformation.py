@@ -84,6 +84,7 @@ class DataTransformation:
                 obj=preprocessing_obj,
                 file_path=self.data_transformation_config.preprocessor_obj_file_path
             )
+            return train_arr, test_arr
 
         except Exception as e:
             raise CustomException(e, sys)

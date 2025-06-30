@@ -1,6 +1,6 @@
 # .gitignore
 *.egg-info/
-*logs
-*artifacts
-
-add .
+logs/
+artifacts/
+__pycache__/
+catboost_info/
