@@ -9,6 +9,7 @@ Python modules reference to read and learn:
 1. setup
 2. sys
 3. custom exception handling
+4. dataclass
 
 Step 1: Set up project with git hub
 Connect with your git hub repo with a readme and gitignore
@@ -29,4 +30,5 @@ Pushed to git
 Step 3: ML Project
 Perform a quick a jupyter notebook experimentation with EDA and model training on the dataset- for insights. 
 Apply this for data ingestion, pipeline and model training modules.
+Create a flwochart for logic flow for each modules - each module has classs and has method, parameters are udated and retruned then passed to new module.
 
