@@ -1,4 +1,6 @@
 # .gitignore
 *.egg-info/
 *logs
+*artifacts
 
+add .
