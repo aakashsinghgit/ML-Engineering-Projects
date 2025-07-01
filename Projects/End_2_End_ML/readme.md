@@ -32,3 +32,5 @@ Perform a quick a jupyter notebook experimentation with EDA and model training o
 Apply this for data ingestion, pipeline and model training modules.
 Create a flwochart for logic flow for each modules - each module has classs and has method, parameters are udated and retruned then passed to new module.
 
+Step 4: Flask app
+
