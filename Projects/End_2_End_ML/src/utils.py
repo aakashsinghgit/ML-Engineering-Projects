@@ -22,3 +22,18 @@ def save_object(obj, file_path):
         
     except Exception as e:
         raise CustomException(e, sys)
+    
+def load_object(file_path):
+    """
+    Load an object from a file using pickle.
+    """
+    import pickle
+    try:
+        # Load the object from the specified file path
+        with open(file_path, 'rb') as file:
+            obj = pickle.load(file)
+        # print(f"Object loaded from {file_path}")
+        return obj
+        
+    except Exception as e:
+        raise CustomException(e, sys)

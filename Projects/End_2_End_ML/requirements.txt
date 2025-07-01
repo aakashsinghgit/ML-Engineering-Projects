@@ -7,4 +7,5 @@ matplotlib
 seaborn
 catboost
 xgboost
+flask
 # -e .
