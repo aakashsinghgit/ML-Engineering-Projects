@@ -1,0 +1,9 @@
+[2025-06-30 17:58:20,806 ] 21 root - INFO - Data Ingestion method starts
+[2025-06-30 17:58:20,814 ] 24 root - INFO - Dataset read as pandas DataFrame
+[2025-06-30 17:58:20,836 ] 29 root - INFO - Raw data saved
+[2025-06-30 17:58:20,848 ] 35 root - INFO - Train and Test data saved. Ingestion is completed.
+[2025-06-30 17:58:20,880 ] 59 root - INFO - Read train and test data completed
+[2025-06-30 17:58:20,880 ] 61 root - INFO - Obtaining preprocessing object
+[2025-06-30 17:58:20,880 ] 33 root - INFO - Numerical features: ['age', 'bmi', 'children']
+[2025-06-30 17:58:20,880 ] 40 root - INFO - Categorical features: ['sex', 'smoker', 'region']
+[2025-06-30 17:58:21,063 ] 72 root - INFO - Applying preprocessing object on training and testing datasets
