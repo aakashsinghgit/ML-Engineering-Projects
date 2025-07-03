@@ -29,8 +29,16 @@ Pushed to git
 
 Step 3: ML Project
 Perform a quick a jupyter notebook experimentation with EDA and model training on the dataset- for insights. 
-Apply this for data ingestion, pipeline and model training modules.
-Create a flwochart for logic flow for each modules - each module has classs and has method, parameters are udated and retruned then passed to new module.
+Apply this for data ingestion, transformation and model training modules.
+To -do : Create a flwochart for logic flow for each modules - each module has classs and has method, parameters are udated and returned then passed to new module.
 
 Step 4: Flask app
+Create the predict pipeline - uses teh mdoel file and serve it to flask web app
+Get form data from flask app and serve the prediction
+To-do: Enhance the front end.
 
+Step 5: Deployment and CI/CD
+App deployment to Azure/AWS/free deployments - without docker
+App deploymentt - with docker
+Q: What is the difference? What happens when we use docker vs when we don't.
+Q: What about training pipeline - The MLOPs implementation?
