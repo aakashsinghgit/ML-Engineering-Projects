@@ -1,0 +1,7 @@
+setup.py
+end2endML.egg-info/PKG-INFO
+end2endML.egg-info/SOURCES.txt
+end2endML.egg-info/dependency_links.txt
+end2endML.egg-info/requires.txt
+end2endML.egg-info/top_level.txt
+src/__init__.py

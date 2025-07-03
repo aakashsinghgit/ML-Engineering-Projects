@@ -1,0 +1,22 @@
+[2025-06-30 18:34:28,333 ] 21 root - INFO - Data Ingestion method starts
+[2025-06-30 18:34:28,339 ] 24 root - INFO - Dataset read as pandas DataFrame
+[2025-06-30 18:34:28,348 ] 29 root - INFO - Raw data saved
+[2025-06-30 18:34:28,358 ] 35 root - INFO - Train and Test data saved. Ingestion is completed.
+[2025-06-30 18:34:28,392 ] 62 root - INFO - Read train and test data completed
+[2025-06-30 18:34:28,392 ] 64 root - INFO - Obtaining preprocessing object
+[2025-06-30 18:34:28,392 ] 33 root - INFO - Numerical features: ['age', 'bmi', 'children']
+[2025-06-30 18:34:28,393 ] 43 root - INFO - Categorical features: ['sex', 'smoker', 'region']
+[2025-06-30 18:34:28,394 ] 75 root - INFO - Applying preprocessing object on training and testing datasets
+[2025-06-30 18:34:28,425 ] 82 root - INFO - Saved preprocessing object
+[2025-06-30 18:34:28,427 ] 32 root - INFO - Splitting training and testing data
+[2025-06-30 18:34:28,428 ] 54 root - INFO - Starting model training
+[2025-06-30 18:34:28,428 ] 57 root - INFO - Training RandomForestRegressor
+[2025-06-30 18:34:28,876 ] 57 root - INFO - Training GradientBoostingRegressor
+[2025-06-30 18:34:29,041 ] 57 root - INFO - Training AdaBoostRegressor
+[2025-06-30 18:34:29,078 ] 57 root - INFO - Training LinearRegression
+[2025-06-30 18:34:29,083 ] 57 root - INFO - Training SVR
+[2025-06-30 18:34:29,184 ] 57 root - INFO - Training DecisionTreeRegressor
+[2025-06-30 18:34:29,192 ] 57 root - INFO - Training KNeighborsRegressor
+[2025-06-30 18:34:29,201 ] 57 root - INFO - Training CatBoostRegressor
+[2025-06-30 18:34:32,054 ] 57 root - INFO - Training XGBRegressor
+[2025-06-30 18:34:32,728 ] 75 root - INFO - Best model found: GradientBoostingRegressor with R2 score: 0.8792900291779596

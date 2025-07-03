@@ -1,0 +1,13 @@
+[2025-07-01 18:34:08,189 ] 97 werkzeug - WARNING -  * Debugger is active!
+[2025-07-01 18:34:08,204 ] 97 werkzeug - INFO -  * Debugger PIN: 469-447-429
+[2025-07-01 18:34:30,226 ] 97 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.36:5000
+[2025-07-01 18:34:30,226 ] 97 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2025-07-01 18:34:30,230 ] 97 werkzeug - INFO -  * Restarting with stat
+[2025-07-01 18:34:32,635 ] 97 werkzeug - WARNING -  * Debugger is active!
+[2025-07-01 18:34:32,648 ] 97 werkzeug - INFO -  * Debugger PIN: 469-447-429
+[2025-07-01 18:34:39,970 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Jul/2025 18:34:39] "GET / HTTP/1.1" 200 -
+[2025-07-01 18:34:42,792 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Jul/2025 18:34:42] "GET /predict HTTP/1.1" 200 -
+[2025-07-01 18:34:55,132 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Jul/2025 18:34:55] "POST /predict HTTP/1.1" 200 -

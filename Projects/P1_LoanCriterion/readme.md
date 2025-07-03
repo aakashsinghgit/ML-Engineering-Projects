@@ -1,11 +1,21 @@
 # Loan Criterion
 
-A simple web application to determine loan eligibility using a pre-trained machine learning model. Users enter information on a web page, and the app predicts whether they qualify for a loan.
+A simple web application to determine loan eligibility using a machine learning model. Users enter information on a web page, and the app predicts whether they qualify for a loan.
 
 ---
+## Skills
+
+1. Train a ML model using a Jupyter Notebook
+2. Basic Flask Web App with MySQL and MongoDB
+3. Serve a ML model to Flask app with Pickling
+
+---
+
 ## Project Objective
 
-This project is a comprehensive, hands-on introduction to full-stack web development using Python with Flask and MySQL with MongoDB. While it showcases the foundational components of building a web application, its primary goal is to demonstrate how a fully trained machine learning model can be integrated into a working web app and used as a core feature. The project leverages Python's pickling to serialise and load the trained model, enabling real-time predictions within the Flask application. This end-to-end example provides a template for deploying machine learning solutions in production-grade web environments.
+This project is a comprehensive, hands-on introduction to full-stack web development using Python with Flask and MySQL with MongoDB. While it showcases the foundational components of building a web application, its primary goal is to demonstrate how a fully trained machine learning model can be integrated into a working web app and used as a core feature. The project leverages Python's pickling to serialize and load the trained model, enabling real-time predictions within the Flask application. This provides a template for deploying machine learning solutions in web environments.
+
+For End-to-End ML Model training in a Flask Web App with modular structure, checkout the production-grade project - https://github.com/aakashsinghgit/ML-Engineering-Projects/tree/main/Projects/P2_HealthInsurance_Price
 
 ---
 ## Project Structure
