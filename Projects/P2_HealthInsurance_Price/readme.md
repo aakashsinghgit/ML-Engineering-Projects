@@ -24,7 +24,7 @@ Step 2: Structure, logging and exception
 Created Components and pipeline folder with files for stages of ML trainings and pipelines.
 Created Exception file with it's logic completed for custom exception
 Created Logger file for logging
-Created utils - used for
+Created utils - used for load and save functions
 Pushed to git
 
 Step 3: ML Project
@@ -33,7 +33,7 @@ Apply this for data ingestion, transformation and model training modules.
 To -do : Create a flwochart for logic flow for each modules - each module has classs and has method, parameters are udated and returned then passed to new module.
 
 Step 4: Flask app
-Create the predict pipeline - uses teh mdoel file and serve it to flask web app
+Create the predict pipeline - uses the model file and serve it to flask web app
 Get form data from flask app and serve the prediction
 To-do: Enhance the front end.
 

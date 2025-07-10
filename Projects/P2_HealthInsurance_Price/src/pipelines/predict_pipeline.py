@@ -1,3 +1,6 @@
+## This pipeline file is used to make predictions using the trained model.
+## It uses the model and preprocessor saved in the artifacts folder.
+
 import sys
 import pandas as pd
 from src.exception import CustomException
