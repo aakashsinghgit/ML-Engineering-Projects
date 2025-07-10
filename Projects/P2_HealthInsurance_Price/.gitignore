@@ -4,3 +4,5 @@ logs/
 artifacts/
 __pycache__/
 catboost_info/
+venv/
+
