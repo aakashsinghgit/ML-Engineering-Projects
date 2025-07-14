@@ -75,7 +75,7 @@ class ModelTrainer:
             logging.info(f"Best model found: {best_model_name} with R2 score: {model_report[best_model_name]['r2_score']}")
             
             save_object(best_model, self.model_trainer_config.trained_model_file_path)
-            
+            logging.info(f"Model saved to {self.model_trainer_config.trained_model_file_path}")
             return best_model_name, model_report
         
         except Exception as e:

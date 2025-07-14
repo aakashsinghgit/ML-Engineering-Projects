@@ -27,12 +27,6 @@ if __name__ == "__main__":
         logging.info(f"Best model: {best_model_name}")          
         logging.info("Model training completed successfully.")
 
-        # Save the model and preprocessor
-        model_path = 'artifacts/model.pkl'      
-        preprocessor_path = 'artifacts/preprocessor.pkl'
-        save_object(file_path=model_path, obj=model_trainer.best_model)
-        save_object(file_path=preprocessor_path, obj=data_transformation.preprocessor)
-        logging.info("Model and preprocessor saved successfully.")
     except Exception as e:
         logging.error(f"An error occurred: {e}")
         raise CustomException(e, sys)

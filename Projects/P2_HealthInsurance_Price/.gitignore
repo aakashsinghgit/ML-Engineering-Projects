@@ -1,8 +1,10 @@
 # .gitignore
-*.egg-info/
-logs/
 artifacts/
-__pycache__/
+logs/
 catboost_info/
-venv/
+end2endML.egginfo/
+# Python cache files
+__pycache__/    
+
+
 
