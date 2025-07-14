@@ -3,11 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <title>End-to-End ML App</title>
+    <style>
+        body {
+            background: #f4f8fb;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .main-container {
+            max-width: 700px;
+            margin: 60px auto;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+            padding: 40px 32px 32px 32px;
+            text-align: center;
+            border: 1.5px solid rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        h1 {
+            color: #2d3a4b;
+            margin-bottom: 12px;
+            font-size: 2.1rem;
+        }
+        .desc {
+            color: #4f5d75;
+            font-size: 1.1rem;
+            margin-bottom: 28px;
+        }
+        .stats {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .stat {
+            background: #eaf6ff;
+            border-left: 4px solid #4f8cff;
+            border-radius: 6px;
+            padding: 12px 16px;
+            color: #1a365d;
+            font-size: 1rem;
+            text-align: left;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: #4f8cff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 14px 36px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+        .cta-btn:hover {
+            background: #2563eb;
+        }
+        @media (max-width: 800px) {
+            .main-container {
+                max-width: 98vw;
+                padding: 18px 2vw 18px 2vw;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the End-to-End ML Web App</h1>
-    <p>
-        <a href="{{ url_for('predict') }}">Go to Prediction Page</a>
-    </p>
+    <div class="main-container">
+        <h1>Welcome to the Health Insurance Price Predictor</h1>
+        <div class="desc">
+            Instantly estimate your health insurance charges using our machine learning powered web app.<br>
+            Enter your details and get a quick, data-driven prediction.
+        </div>
+        <div class="stats">
+            <div class="stat">
+                <strong>Did you know?</strong> As of 2023, the average annual health insurance premium for a family in India is around <b>₹20,000–₹30,000</b>, but coverage and costs can vary widely based on age, city, and plan type.
+            </div>
+            <div class="stat">
+                <strong>Fact:</strong> Factors like age, BMI, smoking status, and region can significantly impact your insurance costs.
+            </div>
+            <div class="stat">
+                <strong>Tip:</strong> Maintaining a healthy lifestyle can help lower your insurance premiums over time.
+            </div>
+        </div>
+        <a href="{{ url_for('predict') }}" class="cta-btn">Go to Prediction Page</a>
+    </div>
 </body>
 </html>

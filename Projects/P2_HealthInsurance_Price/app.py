@@ -20,20 +20,21 @@ def predict():
         return render_template('home.html')
     else:
         data = CustomData(
-            age=int(request.form.get('age')),
-            sex= request.form.get('sex'),
-            bmi=float(request.form.get('bmi')),
-            children=int(request.form.get('children')),
-            smoker=request.form.get('smoker'),
-            region=request.form.get('region')
+            age=int(request.form.get('age', 0)),
+            sex=str(request.form.get('sex', '')),
+            bmi=float(request.form.get('bmi', 0.0)),
+            children=int(request.form.get('children', 0)),
+            smoker=str(request.form.get('smoker', '')),
+            region=str(request.form.get('region', ''))
         )
         # Convert the input data to a DataFrame
         data_df = data.get_data_as_dataframe()
         # Predict using the PredictPipeline
         predict_pipeline = PredictPipeline()
         results = predict_pipeline.predict(data_df)
-        # Render the results in the template
-        return render_template('home.html', results=results[0])
+        # Format the result: Rs <amount> per year, rounded to 2 decimals
+        formatted_result = f"Rs {results[0]:.2f} per year"
+        return render_template('home.html', results=formatted_result)
     
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
