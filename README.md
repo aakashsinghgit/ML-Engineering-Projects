@@ -128,7 +128,7 @@ This roadmap is the guide to **practical, project-driven journey to become an ML
 ## Additional Skills to Integrate Throughout
 
 ✅ **Testing:** Unit and integration tests for data and model pipelines.  
-✅ **System Design Thinking:** Document architecture diagrams for each project. 
+✅ **System Design Thinking:** Document architecture diagrams for each project.
 ✅ **Feature Stores:** Learn tools like Feast for advanced feature management.  
 ✅ **Explainability:** SHAP or LIME for monitoring and debugging models.  
 ✅ **Documentation:** Maintain clean README and docstrings for every project.
