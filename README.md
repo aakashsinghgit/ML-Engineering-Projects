@@ -36,9 +36,13 @@ This roadmap is the guide to **practical, project-driven journey to become an ML
 ### 🚩 Project 1: Loan Predictor
 **Name:** Loan Predictor App
 
-* Train a simple ML model in Jupyter Notebook.
-* Serve using a basic **Flask app**.
-* Pickle the model and load during inference.
+**What it’s about:**  
+Build a simple app that predicts loan approvals using a trained ML model.
+
+**Skills covered:**
+- Train a simple ML model in Jupyter Notebook.
+- Serve using a basic Flask app.
+- Pickle the model and load during inference.
 
 ---
 
@@ -47,81 +51,126 @@ This roadmap is the guide to **practical, project-driven journey to become an ML
 ### 🚩 Project 2: Health Insurance Price Prediction
 **Name:** Health Insurance Price Predictor
 
-* Intro to Modular structure with logging, exception handling, components and pipelines.
-* Pickle + load model for serving.
-* Add **basic CI/CD pipeline** using GitHub Actions.
-* Dockerize app for local reproducibility.
+**What it’s about:**  
+Predict health insurance prices using a clean, modular project structure.
+
+**Skills covered:**
+- Intro to Modular structure with logging, exception handling, components and pipelines etc.
+- Pickle + load model for serving.
+- CI/CD with GitHub Actions.
+- Dockerize for reproducibility.
 
 ---
 
 ## Phase 3: Experiment Tracking & Pipelines
 
-### 🚩 Project 3: MLflow Tracking
-**Name:** _(To be added)_
+### 🚩 Project 3: Health Insurance Price Predictor with MLflow
+**Name:** Health Insurance MLflow Tracker
 
-* Integrate **MLflow or Weights & Biases** for experiment tracking.
-* Model registry + version control.
+**What it’s about:**  
+Track and manage model experiments for insurance price prediction.
 
-### 🚩 Project 4: Data Pipelines
-**Name:** _(To be added)_
+**Skills covered:**
+- Integrate MLflow or Weights & Biases.
+- Track parameters, metrics, and artifacts.
+- Model registry and version control.
 
-* Create ETL pipeline for ingestion, validation, and cleaning.
-* Integrate **feature engineering pipeline**.
-* Use Great Expectations or whylogs for data validation.
+---
+
+### 🚩 Project 4: Customer Churn Prediction Data Pipeline
+**Name:** Churn Prediction Pipeline
+
+**What it’s about:**  
+Build a pipeline to prepare data for customer churn prediction.
+
+**Skills covered:**
+- ETL pipeline for ingestion, validation, and cleaning.
+- Feature engineering pipelines.
+- Data validation using Great Expectations.
 
 ---
 
 ## Phase 4: Serving & Deployment
 
-### 🚩 Project 5: FastAPI Model Serving
-**Name:** _(To be added)_
+### 🚩 Project 5: Credit Card Fraud Detection API (FastAPI)
+**Name:** Fraud Detection API
 
-* Replace Flask with **FastAPI** for async, faster inference.
-* Serve model with REST endpoints + OpenAPI docs.
-* Containerize using Docker.
+**What it’s about:**  
+Serve fraud detection predictions through a real-time API.
 
-### 🚩 Project 6: Kubernetes Deployment
-**Name:** _(To be added)_
+**Skills covered:**
+- Use FastAPI for async, low-latency serving.
+- REST endpoints + OpenAPI documentation.
+- Containerization with Docker.
 
-* Deploy FastAPI Docker container on **Kubernetes cluster (local/minikube or GCP/Azure)**.
-* Learn about auto-scaling and rolling updates.
+---
+
+### 🚩 Project 6: Movie Recommendation System on Kubernetes
+**Name:** Movie Recommender on Kubernetes
+
+**What it’s about:**  
+Deploy a movie recommendation system on Kubernetes.
+
+**Skills covered:**
+- Deploy Docker containers to Kubernetes (local/cloud).
+- Learn auto-scaling and rolling updates.
+- Microservice architecture practices.
 
 ---
 
 ## Phase 5: MLOps & Monitoring
 
-### 🚩 Project 7: CI/CD Automation
-**Name:** _(To be added)_
+### 🚩 Project 7: Automated CI/CD for House Price Prediction
+**Name:** House Price CI/CD Pipeline
 
-* Automate model retraining pipeline with GitHub Actions.
-* Automate Docker builds and deployment on push.
-* Push new models to model registry on passing tests.
+**What it’s about:**  
+Automate retraining and deployment for a house price prediction model.
 
-### 🚩 Project 8: Monitoring & Drift Detection
-**Name:** _(To be added)_
+**Skills covered:**
+- CI/CD pipelines using GitHub Actions.
+- Automated testing, retraining, and deployment.
+- Docker build and push automation.
 
-* Integrate drift monitoring and alerting.
-* Log model input/output, latency, and metrics.
-* Use Prometheus + Grafana for monitoring (optional).
+---
+
+### 🚩 Project 8: Taxi Demand Forecasting with Monitoring & Drift Detection
+**Name:** Taxi Demand Forecaster with Monitoring
+
+**What it’s about:**  
+Forecast taxi demand while monitoring for drift and performance.
+
+**Skills covered:**
+- Build a forecasting service for real-time predictions.
+- Integrate monitoring using Prometheus and Grafana.
+- Implement drift detection with alerting.
 
 ---
 
 ## Phase 6: End-to-End Production Systems (Capstones)
 
-### 🚩 Project 9: E-commerce Recommender System
-**Name:** _(To be added)_
+### 🚩 Project 9: E-commerce Product Recommender System
+**Name:** E-commerce Recommender System
 
-* Use modular pipelines for data ingestion, training, serving.
-* Use MLflow for experiment tracking + model registry.
-* Containerized deployment with CI/CD.
-* Integrated monitoring.
+**What it’s about:**  
+End-to-end recommender system for an e-commerce platform.
 
-### 🚩 Project 10: Real-Time Streaming Pipeline
-**Name:** _(To be added)_
+**Skills covered:**
+- Data pipelines, model training, and serving.
+- Experiment tracking with MLflow.
+- CI/CD and monitoring integration.
 
-* Build a streaming pipeline using Kafka.
-* Serve models for near real-time inference.
-* Focus on system design trade-offs: latency, cost, retraining.
+---
+
+### 🚩 Project 10: Real-Time Social Media Sentiment Analysis Pipeline
+**Name:** Real-Time Sentiment Analysis
+
+**What it’s about:**  
+Analyze social media sentiment in real time.
+
+**Skills covered:**
+- Streaming data ingestion using Kafka.
+- Real-time inference serving.
+- System design for high-throughput, low-latency workloads.
 
 ---
 
