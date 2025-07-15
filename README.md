@@ -11,17 +11,13 @@ These projects are designed to help you **build, deploy, monitor, and iterate on
 ## 📁 Repository Structure
 
 Each project lives inside its own subfolder within this repository, ensuring modularity and independent exploration.
-
+```
 ML-Engineering-Projects/Projects/
 ├── P1-loan-predictor/
 ├── P2-health-insurance-predictor/
 ├── ...
 └── README.md
-
-yaml
-Copy
-Edit
-
+```
 ✅ **Each subfolder** contains code, data, and resources for that project.  
 ✅ Projects cover domains such as healthcare, insurance, finance, e-commerce, and applied ML engineering tools like MLflow, Docker, and Kubernetes.
 
@@ -132,13 +128,9 @@ This roadmap is the guide to **practical, project-driven journey to become an ML
 ## Additional Skills to Integrate Throughout
 
 ✅ **Testing:** Unit and integration tests for data and model pipelines.  
-
 ✅ **System Design Thinking:** Document architecture diagrams for each project. 
-
 ✅ **Feature Stores:** Learn tools like Feast for advanced feature management.  
-
 ✅ **Explainability:** SHAP or LIME for monitoring and debugging models.  
-
 ✅ **Documentation:** Maintain clean README and docstrings for every project.
 
 ---
@@ -148,23 +140,25 @@ This roadmap is the guide to **practical, project-driven journey to become an ML
 *Add the generated Miro-style roadmap image here for a quick glance view.*
 
 ---
-
 ## 🛠️ How to Use
 
-1️⃣ **Clone the repository:**
-```bash
-git clone https://github.com/aakashsinghgit/ML-Engineering-Projects.git
-2️⃣ Navigate to the project folder you want to work on:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/aakashsinghgit/ML-Engineering-Projects.git
+   ```
+2. **Navigate to the project folder you want to work on:**
+   ```bash
+   cd ML-Engineering-Projects/<project-folder-name>
+   ```
+3. **Follow the individual project's README or instructions for setup, dependencies, and usage.**
 
-bash
-Copy
-Edit
-cd ML-Engineering-Projects/Projects/<project-folder-name>
-3️⃣ Follow the individual project's README for setup, dependencies, and usage.
+## 🏗️ Contribution
 
-🏗️ Contribution
-✨ Feel free to fork, open issues, or submit pull requests for improvements or new project ideas!
+Feel free to fork, open issues, or submit pull requests for improvements or new project ideas!
 
-📄 License
-This repository is licensed under the MIT License. See the LICENSE file for details.
+## 📄 License
 
+This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+*Maintained by [aakashsinghgit](https://github.com/aakashsinghgit)*
