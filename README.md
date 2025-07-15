@@ -1,37 +1,47 @@
 # ML Engineering Projects
 
-Welcome to the **ML Engineering Projects** repository!  
-This repository is a collection of machine learning projects, each designed as a standalone, few as starters, some focused on one concpet of ML Engineering, and few end-to-end production-grade solutions.
+Welcome to the **ML Engineering Projects** repository! 🚀
 
-## 📁 Repository Structure
+This repository contains a structured collection of **hands-on, project-based implementations to learn and practice ML Engineering systematically**. Projects range from beginner-friendly starter applications to modular pipelines, MLOps practices, and end-to-end production-grade systems.
 
-Each project lives inside its own subfolder within this repository.  
-This modular approach allows you to explore, develop, and deploy each project independently.
-
-```
-ML-Engineering-Projects/
-├── project-1-name/
-├── project-2-name/
-├── README.md
-└── ...
-```
-
-- **Each subfolder** contains all code, data, and resources required for that specific project.
-- Projects may cover a variety of domains, such as healthcare, insurance, classification, regression, and topics related to ML such as MLOPS, MLFow, Dockrere etc. and can be comibantion of both and more.
-
-## 🚀 Road Map 2025
-# ML Engineering Learning Roadmap (Project-Based)
-
-This roadmap will guide your **practical, project-driven journey to become an ML Engineer**, moving from beginner-friendly projects to full production-grade pipelines with MLOps best practices.
+These projects are designed to help you **build, deploy, monitor, and iterate on machine learning systems in realistic workflows**, moving beyond notebooks to fully operational ML pipelines and services.
 
 ---
 
-## Phase 1: Foundation (Model + App)
+## 📁 Repository Structure
+
+Each project lives inside its own subfolder within this repository, ensuring modularity and independent exploration.
+
+ML-Engineering-Projects/Projects/
+├── P1-loan-predictor/
+├── P2-health-insurance-predictor/
+├── ...
+└── README.md
+
+yaml
+Copy
+Edit
+
+✅ **Each subfolder** contains code, data, and resources for that project.  
+✅ Projects cover domains such as healthcare, insurance, finance, e-commerce, and applied ML engineering tools like MLflow, Docker, and Kubernetes.
+
+---
+
+## 🚀 Road Map 2025
+
+# ML Engineering Learning Roadmap (Project-Based)
+
+This roadmap is the guide to **practical, project-driven journey to become an ML Engineer**, progressing from foundational projects to advanced, production-ready MLOps pipelines.
+
+---
+
+## Phase 1: Get started (Model + App)
 
 ### 🚩 Project 1: Loan Predictor
+**Name:** Loan Predictor App
 
-* Train a simple ML model in Jupyter.
-* Serve using a **Flask app**.
+* Train a simple ML model in Jupyter Notebook.
+* Serve using a basic **Flask app**.
 * Pickle the model and load during inference.
 
 ---
@@ -39,16 +49,11 @@ This roadmap will guide your **practical, project-driven journey to become an ML
 ## Phase 2: Modular Project Structure
 
 ### 🚩 Project 2: Health Insurance Price Prediction
+**Name:** Health Insurance Price Predictor
 
-* Modular structure:
-
-  * src/components
-  * utils
-  * logger
-  * exception handler
-  * config.yaml
+* Intro to Modular structure with logging, exception handling, components and pipelines.
 * Pickle + load model for serving.
-* Add **basic CI/CD pipeline** using Github Actions.
+* Add **basic CI/CD pipeline** using GitHub Actions.
 * Dockerize app for local reproducibility.
 
 ---
@@ -56,13 +61,15 @@ This roadmap will guide your **practical, project-driven journey to become an ML
 ## Phase 3: Experiment Tracking & Pipelines
 
 ### 🚩 Project 3: MLflow Tracking
+**Name:** _(To be added)_
 
 * Integrate **MLflow or Weights & Biases** for experiment tracking.
 * Model registry + version control.
 
 ### 🚩 Project 4: Data Pipelines
+**Name:** _(To be added)_
 
-* Create ETL pipeline for ingestion, validation, cleaning.
+* Create ETL pipeline for ingestion, validation, and cleaning.
 * Integrate **feature engineering pipeline**.
 * Use Great Expectations or whylogs for data validation.
 
@@ -71,12 +78,14 @@ This roadmap will guide your **practical, project-driven journey to become an ML
 ## Phase 4: Serving & Deployment
 
 ### 🚩 Project 5: FastAPI Model Serving
+**Name:** _(To be added)_
 
 * Replace Flask with **FastAPI** for async, faster inference.
 * Serve model with REST endpoints + OpenAPI docs.
 * Containerize using Docker.
 
 ### 🚩 Project 6: Kubernetes Deployment
+**Name:** _(To be added)_
 
 * Deploy FastAPI Docker container on **Kubernetes cluster (local/minikube or GCP/Azure)**.
 * Learn about auto-scaling and rolling updates.
@@ -86,12 +95,14 @@ This roadmap will guide your **practical, project-driven journey to become an ML
 ## Phase 5: MLOps & Monitoring
 
 ### 🚩 Project 7: CI/CD Automation
+**Name:** _(To be added)_
 
-* Automate model retraining pipeline with Github Actions.
+* Automate model retraining pipeline with GitHub Actions.
 * Automate Docker builds and deployment on push.
 * Push new models to model registry on passing tests.
 
 ### 🚩 Project 8: Monitoring & Drift Detection
+**Name:** _(To be added)_
 
 * Integrate drift monitoring and alerting.
 * Log model input/output, latency, and metrics.
@@ -102,6 +113,7 @@ This roadmap will guide your **practical, project-driven journey to become an ML
 ## Phase 6: End-to-End Production Systems (Capstones)
 
 ### 🚩 Project 9: E-commerce Recommender System
+**Name:** _(To be added)_
 
 * Use modular pipelines for data ingestion, training, serving.
 * Use MLflow for experiment tracking + model registry.
@@ -109,6 +121,7 @@ This roadmap will guide your **practical, project-driven journey to become an ML
 * Integrated monitoring.
 
 ### 🚩 Project 10: Real-Time Streaming Pipeline
+**Name:** _(To be added)_
 
 * Build a streaming pipeline using Kafka.
 * Serve models for near real-time inference.
@@ -118,36 +131,40 @@ This roadmap will guide your **practical, project-driven journey to become an ML
 
 ## Additional Skills to Integrate Throughout
 
-✅ **Testing:** Unit tests, integration tests for data & model pipelines.
-✅ **System Design Thinking:** Document architecture diagrams for each project.
-✅ **Feature Stores:** Learn tools like Feast for advanced feature management.
-✅ **Explainability:** SHAP or LIME for monitoring and debugging models.
+✅ **Testing:** Unit and integration tests for data and model pipelines.  
+
+✅ **System Design Thinking:** Document architecture diagrams for each project. 
+
+✅ **Feature Stores:** Learn tools like Feast for advanced feature management.  
+
+✅ **Explainability:** SHAP or LIME for monitoring and debugging models.  
+
 ✅ **Documentation:** Maintain clean README and docstrings for every project.
 
 ---
 
-## 📌  **Visual roadmap** 
+## 📌 Visual Roadmap
 
+*Add the generated Miro-style roadmap image here for a quick glance view.*
+
+---
 
 ## 🛠️ How to Use
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/aakashsinghgit/ML-Engineering-Projects.git
-   ```
-2. **Navigate to the project folder you want to work on:**
-   ```bash
-   cd ML-Engineering-Projects/<project-folder-name>
-   ```
-3. **Follow the individual project's README or instructions for setup, dependencies, and usage.**
+1️⃣ **Clone the repository:**
+```bash
+git clone https://github.com/aakashsinghgit/ML-Engineering-Projects.git
+2️⃣ Navigate to the project folder you want to work on:
 
-## 🏗️ Contribution
+bash
+Copy
+Edit
+cd ML-Engineering-Projects/Projects/<project-folder-name>
+3️⃣ Follow the individual project's README for setup, dependencies, and usage.
 
-Feel free to fork, open issues, or submit pull requests for improvements or new project ideas!
+🏗️ Contribution
+✨ Feel free to fork, open issues, or submit pull requests for improvements or new project ideas!
 
-## 📄 License
+📄 License
+This repository is licensed under the MIT License. See the LICENSE file for details.
 
-This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-*Maintained by [aakashsinghgit](https://github.com/aakashsinghgit)*
