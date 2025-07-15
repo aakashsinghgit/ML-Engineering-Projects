@@ -1,21 +1,16 @@
-# Loan Criterion
+# Loan Criterion - Project Objective
+This project is a **simple ML-powered web application** that predicts **loan approval** based on applicant details.
 
-A simple web application to determine loan eligibility using a machine learning model. Users enter information on a web page, and the app predicts whether they qualify for a loan.
+It serves as your **first step in ML Engineering**, demonstrating how to deploy a trained machine learning model using a Flask web app. Users enter information on a web page, and the app predicts whether they qualify for a loan.
 
----
-## Skills
+While it showcases the foundational components of building a web application, its **primary goal is to demonstrate integrating a machine learning model as a core feature in a working web app**. This serves as a **template for deploying machine learning solutions in web environments**. Visit the main repo page for the full roadmap.
 
-1. Train a ML model using a Jupyter Notebook
-2. Basic Flask Web App with MySQL and MongoDB
-3. Serve a ML model to Flask app with Pickling
+--- 
+## Skills Covered
 
----
-
-## Project Objective
-
-This project is a comprehensive, hands-on introduction to full-stack web development using Python with Flask and MySQL with MongoDB. While it showcases the foundational components of building a web application, its primary goal is to demonstrate how a fully trained machine learning model can be integrated into a working web app and used as a core feature. The project leverages Python's pickling to serialize and load the trained model, enabling real-time predictions within the Flask application. This provides a template for deploying machine learning solutions in web environments.
-
-For End-to-End ML Model training in a Flask Web App with modular structure, checkout the production-grade project - https://github.com/aakashsinghgit/ML-Engineering-Projects/tree/main/Projects/P2_HealthInsurance_Price
+✅ Train a classification model to predict loan approval (yes/no).  
+✅ Pickle the trained model for later inference.  
+✅ Build a Flask web app (with MYSQL and MongoDB) to serve the model for user input and display predictions.
 
 ---
 ## Project Structure
@@ -59,6 +54,8 @@ P1_LoanCriterion/
    > It will appear as below:
    ```
    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:yourpass@localhost:3306/login_store'
+# replace 'yourpass' with your actual MySQL root password
+
    ```
 
 2. **Install Python**  
@@ -91,15 +88,23 @@ You can train a new model using 'Model_Building/' contents, which creates a mode
 Visit [http://localhost:5000](http://localhost:5000) in your browser.
 
 ---
-## HINT: It's a brave new world of Agentic AI. Use GitHub Copilot in your Visual Studio Code to summarise the project and guide you to run, modify, improve, etc. 
-## Future Improvements
+💡 Tip: We are in the brave new world of Agentic AI. Use GitHub Copilot in VS Code to summarize, modify, improve, and guide you while working on this project.
 
-- Dockerize the project for easier deployment (planned for version 2)
-- Add more input features and improve the ML model
-- Enhance front-end design
+📈 **Next Step in Your Learning Path:**
+
+Continue your ML Engineering journey with modular structuring, CI/CD pipelines, and containerization in:
+
+[🔗 Project 2: Health Insurance Price Predictor](https://github.com/aakashsinghgit/ML-Engineering-Projects/tree/main/Projects/P2_HealthInsurance_Price)
+---
+## 🏗️ Contribution
+
+Feel free to fork, open issues, or submit pull requests for improvements or new project ideas!
+
+## 📄 License
+
+This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
+*Maintained by [aakashsinghgit](https://github.com/aakashsinghgit)*
 
-## License
 
-[MIT](LICENSE)
