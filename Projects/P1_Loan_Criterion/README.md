@@ -54,8 +54,7 @@ P1_LoanCriterion/
    > It will appear as below:
    ```
    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:yourpass@localhost:3306/login_store'
-# replace 'yourpass' with your actual MySQL root password
-
+   # replace 'yourpass' with your actual MySQL root password
    ```
 
 2. **Install Python**  
