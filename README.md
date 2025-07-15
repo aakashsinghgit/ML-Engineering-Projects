@@ -197,7 +197,7 @@ Analyze social media sentiment in real time.
    ```
 2. **Navigate to the project folder you want to work on:**
    ```bash
-   cd ML-Engineering-Projects/<project-folder-name>
+   cd ML-Engineering-Projects/projects/<project-folder-name>
    ```
 3. **Follow the individual project's README or instructions for setup, dependencies, and usage.**
 
