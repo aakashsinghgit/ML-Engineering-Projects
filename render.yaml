@@ -1,21 +1,10 @@
 services:
-  # Service 1: Health Insurance Price Predictor (with Docker/Gunicorn)
-  - type: web
-    name: health-insurance-predictor
-    env: python
-    rootDir: Projects/P2_HealthInsurance_Price
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.10.0
-    healthCheckPath: /
-    autoDeploy: true
 
-  # Service 2: Loan Predictor (No Docker - Direct Python)
+  # Service 1: Loan Predictor (No Docker - Direct Python)
   - type: web
     name: loan-predictor
     env: python
+    plan: free
     rootDir: Projects/P1_Loan_Predictor
     buildCommand: pip install -r requirements.txt
     startCommand: python app.py
@@ -26,3 +15,18 @@ services:
         value: 5000
     healthCheckPath: /
     autoDeploy: true
+
+  # Service 2: Health Insurance Price Predictor (with Docker/Gunicorn)
+  - type: web
+    name: health-insurance-predictor
+    env: python
+    plan: free
+    rootDir: Projects/P2_HealthInsurance_Price
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+    healthCheckPath: /
+    autoDeploy: true
+
