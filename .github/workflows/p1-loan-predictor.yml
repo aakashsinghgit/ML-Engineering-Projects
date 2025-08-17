@@ -1,0 +1,54 @@
+name: P1 Loan Predictor CI/CD
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'Projects/P1_Loan_Predictor/**'
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'Projects/P1_Loan_Predictor/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install dependencies
+      run: |
+        cd Projects/P1_Loan_Predictor
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run tests
+      run: |
+        cd Projects/P1_Loan_Predictor
+        # Add your test commands here when you create tests
+        echo "Running tests for P1 Loan Predictor"
+        # python -m pytest tests/
+    
+    - name: Build verification
+      run: |
+        cd Projects/P1_Loan_Predictor
+        python -c "import app; print('✅ App imports successfully')"
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    
+    steps:
+    - name: Deploy to Render
+      run: |
+        echo "🚀 P1 Loan Predictor will auto-deploy via Render webhook"
+        echo "Service: loan-predictor"
+        echo "Make sure you have connected your GitHub repo to Render"
+        echo "Render will auto-deploy on successful push to main/master branch"

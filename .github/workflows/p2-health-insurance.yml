@@ -1,0 +1,58 @@
+name: P2 Health Insurance CI/CD
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'Projects/P2_HealthInsurance_Price/**'
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'Projects/P2_HealthInsurance_Price/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run tests (if you have them)
+      run: |
+        # Add your test commands here when you create tests
+        echo "Tests would run here"
+        # python -m pytest tests/
+    
+    - name: Build Docker image
+      run: |
+        docker build -t health-insurance-predictor .
+    
+    - name: Test Docker image
+      run: |
+        docker run --rm -d --name test-app -p 5000:5000 health-insurance-predictor
+        sleep 10
+        curl -f http://localhost:5000/ || exit 1
+        docker stop test-app
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    
+    steps:
+    - name: Deploy to Render
+      run: |
+        echo "🚀 P2 Health Insurance will auto-deploy via Render webhook"
+        echo "Service: health-insurance-predictor"
+        echo "Make sure you have connected your GitHub repo to Render"
+        echo "Render will auto-deploy on successful push to main/master branch"
