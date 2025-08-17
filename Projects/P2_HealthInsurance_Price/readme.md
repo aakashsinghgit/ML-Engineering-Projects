@@ -95,8 +95,16 @@ P2_HealthInsurance_Price/
    ```
    Visit [http://localhost:5000](http://localhost:5000) in your browser.
 
-6. **(Optional) Run with Docker**
-   - Build and run the Docker container for reproducible deployment.
+6. **Run with Docker**
+   ```bash
+   docker build -t health-insurance-predictor .
+   docker run -p 5000:5000 health-insurance-predictor
+   ```
+
+7. **Deploy to Production (Free!)**
+   - Follow the [DEPLOYMENT.md](DEPLOYMENT.md) guide
+   - Deploy to Render with automated CI/CD
+   - Your app will be live on the internet!
 
 ---
 
