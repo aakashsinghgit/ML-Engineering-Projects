@@ -1,44 +1,145 @@
-1. Data Ingestion
-2. Data Transformation
-3. Model Trainer
-4. Model Evaluation
-5. Model Deployment (on AWS)
+# Health Insurance Price Predictor
 
-CI/CD Pipelines with Github Actions
-Python modules reference to read and learn:
-1. setup
-2. sys
-3. custom exception handling
-4. dataclass
+This project is a **modular ML engineering application** that predicts **health insurance prices** based on user input. It is designed to showcase how to structure ML projects for maintainability, reproducibility, and production-readiness.
 
-Step 1: Set up project with git hub
-Connect with your git hub repo with a readme and gitignore
-Created src folder with "__init__.py"
-Created setup.py
-Created Requirements.txt, added -e . to connect it with setup.py to run automatically
-Run pip install requirements -> installs requirements and automatically builds package from setup.py
-A new package folder egg-info appears -> added this to gitignore.
-Push it to all to repo.
+It builds on the basics from Project 1, introducing **modular code organization, logging, exception handling, pipelines, and CI/CD practices**. The project also demonstrates how to containerize and deploy ML services.
 
-Step 2: Structure, logging and exception
-Created Components and pipeline folder with files for stages of ML trainings and pipelines.
-Created Exception file with it's logic completed for custom exception
-Created Logger file for logging
-Created utils - used for load and save functions
-Pushed to git
+---
 
-Step 3: ML Project
-Perform a quick a jupyter notebook experimentation with EDA and model training on the dataset- for insights. 
-Apply this for data ingestion, transformation and model training modules.
-To -do : Create a flwochart for logic flow for each modules - each module has classs and has method, parameters are udated and returned then passed to new module.
+## 🚀 What You’ll Learn
 
-Step 4: Flask app
-Create the predict pipeline - uses the model file and serve it to flask web app
-Get form data from flask app and serve the prediction
-To-do: Enhance the front end.
+✅ Modular project structure for ML engineering  
+✅ Custom logging and exception handling  
+✅ Building reusable components and pipelines  
+✅ Model training, evaluation, and deployment  
+✅ Serving predictions via a Flask web app  
+✅ CI/CD with GitHub Actions  
+✅ Dockerization for reproducibility
 
-Step 5: Deployment and CI/CD
-App deployment to Azure/AWS/free deployments - without docker
-App deploymentt - with docker
-Q: What is the difference? What happens when we use docker vs when we don't.
-Q: What about training pipeline - The MLOPs implementation?
+---
+
+## 🗂️ Project Structure
+
+```
+P2_HealthInsurance_Price/
+├── artifacts/                # Stores intermediate and final artifacts (models, data, etc.)
+├── catboost_info/            # CatBoost training logs (if used)
+├── end2endML.egg-info/       # Python package info
+├── logs/                     # Log files
+├── notebook/
+│   ├── data/
+│   │   └── insurance.csv     # Dataset for EDA and model training
+│   └── insurance_pipeline_dev.ipynb  # Notebook for EDA and prototyping
+├── readme.md                 # Project overview and instructions
+├── requirements.txt          # Python dependencies
+├── setup.py                  # Project setup for pip install
+├── src/
+│   ├── components/           # Modular code for data ingestion, transformation, training, etc.
+│   ├── exception.py          # Custom exception handling
+│   ├── logger.py             # Logging setup
+│   ├── pipelines/            # Training and prediction pipelines
+│   ├── utils.py              # Utility functions
+│   └── __init__.py
+├── templates/                # HTML templates for the Flask app
+│   ├── home.html
+│   └── index.html
+├── app.py                    # Flask web application
+└── venv/                     # Virtual environment (not tracked in git)
+```
+
+---
+
+## 🧑‍💻 Features
+
+- **Data Ingestion:** Modular class to load and split data.
+- **Data Transformation:** Feature engineering and preprocessing.
+- **Model Training:** Train regression models to predict insurance prices.
+- **Model Evaluation:** Evaluate and compare model performance.
+- **Model Deployment:** Save and load models for inference.
+- **Web App:** Serve predictions via a Flask web interface.
+- **Logging & Exception Handling:** Track pipeline steps and errors.
+- **CI/CD:** Automate testing and deployment with GitHub Actions.
+- **Dockerization:** Containerize the app for consistent deployment.
+
+---
+
+## 🛠️ Setup & Usage
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/aakashsinghgit/ML-Engineering-Projects.git
+   cd ML-Engineering-Projects/Projects/P2_HealthInsurance_Price
+   ```
+
+2. **Create and activate a virtual environment**
+   ```bash
+   python -m venv venv
+   # On Windows:
+   venv\Scripts\activate
+   # On Mac/Linux:
+   source venv/bin/activate
+   ```
+
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Train the model**
+   - Run the Jupyter notebook in `notebook/` for EDA and initial training.
+   - Use the modular pipeline in `src/pipelines/train_pipeline.py` to train and save the model.
+
+5. **Run the web app**
+   ```bash
+   python app.py
+   ```
+   Visit [http://localhost:5000](http://localhost:5000) in your browser.
+
+6. **(Optional) Run with Docker**
+   - Build and run the Docker container for reproducible deployment.
+
+---
+
+## 📝 Project Steps
+
+1. **Project Setup:**  
+   - Initialize git, create `src/`, `setup.py`, and requirements.
+   - Install dependencies and set up the package structure.
+
+2. **Modular Code Structure:**  
+   - Create components for data ingestion, transformation, and model training.
+   - Implement custom exception and logging modules.
+   - Build utility functions for saving/loading models.
+
+3. **Model Development:**  
+   - Explore data and train models in the notebook.
+   - Move logic into modular pipeline scripts.
+
+4. **Web App Integration:**  
+   - Build a Flask app to serve predictions.
+   - Connect the trained model to the web interface.
+
+5. **CI/CD & Deployment:**  
+   - Set up GitHub Actions for automated testing and deployment.
+   - Containerize the app with Docker for cloud or local deployment.
+
+---
+
+## 💡 Next Steps
+
+- Try deploying the app to Azure, AWS, or another cloud platform.
+- Experiment with different regression models and feature engineering.
+- Enhance the web interface for better user experience.
+
+---
+
+## 🏗️ Contribution
+
+Feel free to fork, open issues, or submit pull requests for improvements or new project ideas!
+
+## 📄 License
+
+This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+*Maintained by [aakashsinghgit](https://github.com/aakashsinghgit)*
