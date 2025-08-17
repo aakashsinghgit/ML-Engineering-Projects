@@ -17,6 +17,17 @@ This guide will help you deploy your Flask app to production using **Render** (f
 - ✅ GitHub repository with your code
 - ✅ Render account (free at [render.com](https://render.com))
 
+## 🔍 **Step 0: Verify Configuration (Important!)**
+
+Before deploying, verify your configuration is correct:
+
+```bash
+cd Projects/P2_HealthInsurance_Price
+python verify_deployment.py
+```
+
+This script checks that all deployment files are properly configured for the subfolder deployment.
+
 ---
 
 ## 🚀 **Step 1: Deploy to Render (Free)**
@@ -29,6 +40,7 @@ This guide will help you deploy your Flask app to production using **Render** (f
 - Click "New +" → "Web Service"
 - Connect your GitHub repository
 - Select the repository: `ML-Engineering-Projects`
+- **Important**: Since your repo has multiple projects, Render will use the `render.yaml` file to know which subfolder to deploy
 
 ### **1.3 Configure the Service**
 ```
@@ -124,6 +136,11 @@ Value: your-app-name.onrender.com
    - Check requirements.txt
    - Verify Python version compatibility
    - Check Render logs
+
+2. **Wrong Project Deployed**
+   - Verify `render.yaml` has correct `rootDir: Projects/P2_HealthInsurance_Price`
+   - Ensure `render.yaml` is in the root of your repository
+   - Check that Render is reading the correct configuration file
 
 2. **App Won't Start**
    - Verify PORT environment variable
