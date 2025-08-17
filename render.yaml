@@ -1,13 +1,13 @@
 services:
 
-  # Service 1: Loan Predictor (No Docker - Direct Python)
+  # Service 1: Loan Criterion Predictor (No Docker - Direct Python)
   - type: web
-    name: loan-predictor
+    name: loan-criterion-predictor
     env: python
     plan: free
-    rootDir: Projects/P1_Loan_Predictor
+    rootDir: Projects/P1_Loan_Criterion
     buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
+    startCommand: python main.py
     envVars:
       - key: PYTHON_VERSION
         value: 3.10.0

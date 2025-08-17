@@ -1,14 +1,14 @@
-name: P1 Loan Predictor CI/CD
+name: P1 Loan Criterion CI/CD
 
 on:
   push:
     branches: [ main, master ]
     paths:
-      - 'Projects/P1_Loan_Predictor/**'
+      - 'Projects/P1_Loan_Criterion/**'
   pull_request:
     branches: [ main, master ]
     paths:
-      - 'Projects/P1_Loan_Predictor/**'
+      - 'Projects/P1_Loan_Criterion/**'
 
 jobs:
   test:
@@ -24,21 +24,21 @@ jobs:
     
     - name: Install dependencies
       run: |
-        cd Projects/P1_Loan_Predictor
+        cd Projects/P1_Loan_Criterion
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
     - name: Run tests
       run: |
-        cd Projects/P1_Loan_Predictor
+        cd Projects/P1_Loan_Criterion
         # Add your test commands here when you create tests
-        echo "Running tests for P1 Loan Predictor"
+        echo "Running tests for P1 Loan Criterion"
         # python -m pytest tests/
     
     - name: Build verification
       run: |
-        cd Projects/P1_Loan_Predictor
-        python -c "import app; print('✅ App imports successfully')"
+        cd Projects/P1_Loan_Criterion
+        python -c "import main; print('✅ App imports successfully')"
 
   deploy:
     needs: test
@@ -48,7 +48,7 @@ jobs:
     steps:
     - name: Deploy to Render
       run: |
-        echo "🚀 P1 Loan Predictor will auto-deploy via Render webhook"
-        echo "Service: loan-predictor"
+        echo "🚀 P1 Loan Criterion will auto-deploy via Render webhook"
+        echo "Service: loan-criterion-predictor"
         echo "Make sure you have connected your GitHub repo to Render"
         echo "Render will auto-deploy on successful push to main/master branch"

@@ -13,10 +13,10 @@ from predict.predict_views import predict_view
 app = Flask(__name__, template_folder='templates')
 model = pickle.load(open('model.pkl', 'rb')) # loading the trained model
 
-ENV = 'dev'
-app.debug = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:yourpass@localhost:3306/login_store'
-app.config['SECRET_KEY'] = 'giveanysceretkey'
+ENV = os.environ.get('ENV', 'dev')
+app.debug = ENV == 'dev'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'mysql://root:yourpass@localhost:3306/login_store')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'giveanysceretkey')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
@@ -172,5 +172,6 @@ def summary_report():
 app.register_blueprint(predict_view)
 
 if __name__ == "__main__":
-    app.run(debug=True,port=6622)
+    port = int(os.environ.get('PORT', 6622))
+    app.run(debug=False, host='0.0.0.0', port=port)
     app.config['TEMPLATES_AUTO_RELOAD'] = True
