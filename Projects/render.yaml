@@ -2,6 +2,7 @@ services:
   - type: web
     name: health-insurance-predictor
     env: python
+    rootDir: Projects/P2_HealthInsurance_Price
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
     envVars:
