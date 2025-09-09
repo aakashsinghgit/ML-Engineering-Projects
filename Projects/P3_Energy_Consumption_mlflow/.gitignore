@@ -5,3 +5,11 @@ venv/
 .venv/
 env/
 ENV/
+
+# Large data files
+artifacts/data_raw/
+*.csv
+*.txt
+*.pkl
+*.json
+*.log
