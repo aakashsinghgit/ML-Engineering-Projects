@@ -8,8 +8,16 @@ ENV/
 
 # Large data files
 artifacts/data_raw/
+artifacts/data_ingested/
+artifacts/models/
+artifacts/logs/
+
+# Data file extensions
 *.csv
 *.txt
 *.pkl
 *.json
 *.log
+*.h5
+*.hdf5
+*.parquet
