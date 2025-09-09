@@ -64,14 +64,15 @@ Predict health insurance prices using a clean, modular project structure.
 
 ## Phase 3: Experiment Tracking & Pipelines
 
-### 🚩 Project 3: Health Insurance Price Predictor with MLflow
-**Name:** Health Insurance MLflow Tracker
+### 🚩 Project 3: Energy Consumption Forecasting with MLflow
+**Name:** Energy Consumption MLflow Tracker
 
 **What it’s about:**  
-Track and manage model experiments for insurance price prediction.
+Track and manage model experiments for forecasting household energy consumption using time series data.
 
 **Skills covered:**
 - Integrate MLflow or Weights & Biases.
+- Time series regression and feature engineering.
 - Track parameters, metrics, and artifacts.
 - Model registry and version control.
 
