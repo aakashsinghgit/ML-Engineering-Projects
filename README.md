@@ -31,7 +31,7 @@ This roadmap is the guide to **practical, project-driven journey to become an ML
 
 ---
 
-## Phase 1: Get started (Model + App)
+## Phase 1: Get started with Model Training and App Building
 
 ### 🚩 Project 1: Loan Predictor
 **Name:** Loan Predictor App
@@ -44,9 +44,7 @@ Build a simple app that predicts loan approvals using a trained ML model.
 - Serve using a basic Flask app.
 - Pickle the model and load during inference.
 
----
-
-## Phase 2: Modular Project Structure
+---  
 
 ### 🚩 Project 2: Health Insurance Price Prediction
 **Name:** Health Insurance Price Predictor
@@ -62,7 +60,7 @@ Predict health insurance prices using a clean, modular project structure.
 
 ---
 
-## Phase 3: Experiment Tracking & Pipelines
+## Phase 2: Experiment Tracking & Pipelines
 
 ### 🚩 Project 3: Energy Consumption Forecasting with MLflow
 **Name:** Energy Consumption MLflow Tracker
@@ -91,7 +89,7 @@ Build a pipeline to prepare data for customer churn prediction.
 
 ---
 
-## Phase 4: Serving & Deployment
+## Phase 3: Serving & Deployment
 
 ### 🚩 Project 5: Credit Card Fraud Detection API (FastAPI)
 **Name:** Fraud Detection API
@@ -119,7 +117,7 @@ Deploy a movie recommendation system on Kubernetes.
 
 ---
 
-## Phase 5: MLOps & Monitoring
+## Phase 4: MLOps & Monitoring
 
 ### 🚩 Project 7: Automated CI/CD for House Price Prediction
 **Name:** House Price CI/CD Pipeline
@@ -147,7 +145,7 @@ Forecast taxi demand while monitoring for drift and performance.
 
 ---
 
-## Phase 6: End-to-End Production Systems (Capstones)
+## Phase 5: End-to-End Production Systems (Capstones)
 
 ### 🚩 Project 9: E-commerce Product Recommender System
 **Name:** E-commerce Recommender System
@@ -187,7 +185,8 @@ Analyze social media sentiment in real time.
 
 ## 📌 Visual Roadmap
 
-*Add the generated Miro-style roadmap image here for a quick glance view.*
+![ML Engineering Projects (1)](https://github.com/user-attachments/assets/88d39576-e23d-4ead-a161-4b76caa92916)
+
 
 ---
 ## 🛠️ How to Use
