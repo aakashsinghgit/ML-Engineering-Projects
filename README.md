@@ -1,213 +1,215 @@
 # ML Engineering Projects
 
-Welcome to the **ML Engineering Projects** repository! 🚀
+Production-oriented ML Engineering projects — from model training and serving to MLOps pipelines, Kubernetes deployments, and monitoring systems. Every project is built with real-world engineering practices: modular code, CI/CD, Docker, experiment tracking, and proper serving layers.
 
-This repository contains a structured collection of **hands-on, project-based implementations to learn and practice ML Engineering systematically**. Projects range from beginner-friendly starter applications to modular pipelines, MLOps practices, and end-to-end production-grade systems.
+**Background:** 5 years of Azure cloud + CI/CD engineering applied to building and shipping ML systems. These aren't tutorial notebooks — they're engineered end-to-end.
 
-These projects are designed to help you **build, deploy, monitor, and iterate on machine learning systems in realistic workflows**, moving beyond notebooks to fully operational ML pipelines and services.
-
----
+***
 
 ## 📁 Repository Structure
 
-Each project lives inside its own subfolder within this repository, ensuring modularity and independent exploration.
+Each project lives in its own subfolder with independent code, data, and documentation.
+
 ```
-ML-Engineering-Projects/Projects/
-├── P1-loan-predictor/
-├── P2-health-insurance-predictor/
-├── ...
+ML-Engineering-Projects/
+├── Projects/
+│   ├── P1-loan-predictor/
+│   ├── P2-health-insurance-predictor/
+│   ├── P3-health-insurance-mlflow-tracker/
+│   ├── P4-fraud-detection-api/
+│   ├── P5-churn-prediction-pipeline/
+│   ├── P6-house-price-cicd/
+│   ├── P7-movie-recommender-kubernetes/
+│   ├── P8-taxi-demand-monitoring/
+│   ├── P9-ecommerce-recommender/
+│   └── P10-ml-platform-capstone/
 └── README.md
 ```
-✅ **Each subfolder** contains code, data, and resources for that project.  
-✅ Projects cover domains such as healthcare, insurance, finance, e-commerce, and applied ML engineering tools like MLflow, Docker, and Kubernetes.
 
----
+***
 
-## 🚀 Road Map 2025
+## 🗺️ Engineering Progressions
 
-# ML Engineering Learning Roadmap (Project-Based)
+Projects are structured in five phases — each phase adds a new layer of production engineering on top of the last.
 
-This roadmap is the guide to **practical, project-driven journey to become an ML Engineer**, progressing from foundational projects to advanced, production-ready MLOps pipelines.
+***
 
----
+## Phase 1 — Model Training & Serving Foundations
 
-## Phase 1: Get started with Model Training and App Building
+### P1 · Loan Predictor App ✅
 
-### 🚩 Project 1: Loan Predictor
-**Name:** Loan Predictor App
+A binary classification app that predicts loan approval status, served via a REST API.
 
-**What it’s about:**  
-Build a simple app that predicts loan approvals using a trained ML model.
+**Engineering highlights:**
+- Trained and serialised a scikit-learn classifier
+- Served predictions through a Flask REST endpoint
+- Pickle-based model loading at inference time
 
-**Skills covered:**
-- Train a simple ML model in Jupyter Notebook.
-- Serve using a basic Flask app.
-- Pickle the model and load during inference.
+**Stack:** Python · scikit-learn · Flask · Pickle
 
----  
+***
 
-### 🚩 Project 2: Health Insurance Price Prediction
-**Name:** Health Insurance Price Predictor
+### P2 · Health Insurance Price Predictor ✅
 
-**What it’s about:**  
-Predict health insurance prices using a clean, modular project structure.
+Regression model predicting health insurance premiums, built with a production-grade modular structure.
 
-**Skills covered:**
-- Intro to Modular structure with logging, exception handling, components and pipelines etc.
-- Pickle + load model for serving.
-- CI/CD with GitHub Actions.
-- Dockerize for reproducibility.
+**Engineering highlights:**
+- Modular project layout: components, pipelines, logging, exception handling
+- CI/CD pipeline with GitHub Actions — automated test and build on every push
+- Dockerised for reproducible, environment-independent deployment
+- OpenAPI documentation via Swagger UI
 
----
+**Stack:** Python · scikit-learn · FastAPI · Docker · GitHub Actions
 
-## Phase 2: Experiment Tracking & Pipelines
+***
 
-### 🚩 Project 3: Energy Consumption Forecasting with MLflow
-**Name:** Energy Consumption MLflow Tracker
+## Phase 2 — Experiment Tracking & Pipelines
 
-**What it’s about:**  
-Track and manage model experiments for forecasting household energy consumption using time series data.
+### P3 · Health Insurance MLflow Tracker 🔨
 
-**Skills covered:**
-- Integrate MLflow or Weights & Biases.
-- Time series regression and feature engineering.
-- Track parameters, metrics, and artifacts.
-- Model registry and version control.
+Adds a full experiment tracking and model registry layer on top of the P2 Health Insurance dataset — turning ad-hoc training runs into a governed, versioned ML workflow.
 
----
+**Engineering highlights:**
+- MLflow experiment tracking: parameters, metrics, and artifacts logged per run
+- Model registry with Staging → Production → Archived lifecycle transitions
+- Compare 5+ model variants (Ridge, Lasso, Random Forest, XGBoost, LightGBM) in a single tracked experiment
+- REST API that always loads the model currently in the "Production" stage
+- Reproducible training runs via MLflow Projects
 
-### 🚩 Project 4: Customer Churn Prediction Data Pipeline
-**Name:** Churn Prediction Pipeline
+**Stack:** Python · scikit-learn · MLflow · FastAPI · Docker
 
-**What it’s about:**  
-Build a pipeline to prepare data for customer churn prediction.
+***
 
-**Skills covered:**
-- ETL pipeline for ingestion, validation, and cleaning.
-- Feature engineering pipelines.
-- Data validation using Great Expectations.
+### P4 · Fraud Detection API
 
----
+Real-time fraud detection model served through a high-performance async FastAPI service.
 
-## Phase 3: Serving & Deployment
+**Engineering highlights:**
+- Async FastAPI endpoints with request validation (Pydantic schemas)
+- Batch inference endpoint alongside single-record prediction
+- Full OpenAPI / Swagger documentation
+- Containerised with Docker, ready for cloud deployment
+- Imbalanced dataset handling: SMOTE + class weight tuning
 
-### 🚩 Project 5: Credit Card Fraud Detection API (FastAPI)
-**Name:** Fraud Detection API
+**Stack:** Python · scikit-learn · FastAPI · Pydantic · Docker
 
-**What it’s about:**  
-Serve fraud detection predictions through a real-time API.
+***
 
-**Skills covered:**
-- Use FastAPI for async, low-latency serving.
-- REST endpoints + OpenAPI documentation.
-- Containerization with Docker.
+### P5 · Customer Churn Prediction Pipeline
 
----
+End-to-end data pipeline preparing features for churn prediction, built for reliability and reproducibility.
 
-### 🚩 Project 6: Movie Recommendation System on Kubernetes
-**Name:** Movie Recommender on Kubernetes
+**Engineering highlights:**
+- ETL pipeline: ingestion, schema validation, cleaning, transformation
+- Data validation with Great Expectations — catches bad data before it reaches training
+- Feature engineering pipeline with scikit-learn custom transformers
+- Pipeline serialisation for reuse at inference time
 
-**What it’s about:**  
-Deploy a movie recommendation system on Kubernetes.
+**Stack:** Python · pandas · scikit-learn · Great Expectations · Docker
 
-**Skills covered:**
-- Deploy Docker containers to Kubernetes (local/cloud).
-- Learn auto-scaling and rolling updates.
-- Microservice architecture practices.
+***
 
----
+## Phase 3 — Deployment & Orchestration
 
-## Phase 4: MLOps & Monitoring
+### P6 · House Price CI/CD Pipeline
 
-### 🚩 Project 7: Automated CI/CD for House Price Prediction
-**Name:** House Price CI/CD Pipeline
+Automated retraining and deployment pipeline for a house price prediction model — triggered on every code or data change.
 
-**What it’s about:**  
-Automate retraining and deployment for a house price prediction model.
+**Engineering highlights:**
+- GitHub Actions pipeline: test → train → evaluate → build Docker image → deploy
+- Automated model performance gate — deployment blocked if new model underperforms baseline
+- Docker image build and push to container registry on merge to main
+- Environment promotion: Staging → Production via GitHub environments
 
-**Skills covered:**
-- CI/CD pipelines using GitHub Actions.
-- Automated testing, retraining, and deployment.
-- Docker build and push automation.
+**Stack:** Python · scikit-learn · FastAPI · Docker · GitHub Actions
 
----
+***
 
-### 🚩 Project 8: Taxi Demand Forecasting with Monitoring & Drift Detection
-**Name:** Taxi Demand Forecaster with Monitoring
+### P7 · Movie Recommender on Kubernetes
 
-**What it’s about:**  
-Forecast taxi demand while monitoring for drift and performance.
+Collaborative filtering recommendation system deployed to Kubernetes with autoscaling — directly applying Azure VMSS knowledge to ML serving.
 
-**Skills covered:**
-- Build a forecasting service for real-time predictions.
-- Integrate monitoring using Prometheus and Grafana.
-- Implement drift detection with alerting.
+**Engineering highlights:**
+- Kubernetes deployment with Horizontal Pod Autoscaler (HPA) based on CPU and request latency
+- Helm chart for repeatable, configurable deployments
+- Liveness and readiness probes for zero-downtime rolling updates
+- Load tested with Locust — autoscaling validated under simulated traffic spikes
 
----
+**Stack:** Python · scikit-learn · FastAPI · Docker · Kubernetes · Helm · Locust
 
-## Phase 5: End-to-End Production Systems (Capstones)
+***
 
-### 🚩 Project 9: E-commerce Product Recommender System
-**Name:** E-commerce Recommender System
+## Phase 4 — MLOps & Monitoring
 
-**What it’s about:**  
-End-to-end recommender system for an e-commerce platform.
+### P8 · Taxi Demand Forecaster with Monitoring
 
-**Skills covered:**
-- Data pipelines, model training, and serving.
-- Experiment tracking with MLflow.
-- CI/CD and monitoring integration.
+Time series forecasting service with a full production monitoring stack — detecting data drift and model degradation before users notice.
 
----
+**Engineering highlights:**
+- LSTM-based demand forecaster served via FastAPI
+- EvidentlyAI drift detection: PSI and KS test on incoming feature distributions
+- Prometheus metrics exporter + Grafana dashboards for real-time visibility
+- Alerting rules: fires when drift exceeds threshold
+- Drift simulation script for testing the monitoring stack end-to-end
 
-### 🚩 Project 10: Real-Time Social Media Sentiment Analysis Pipeline
-**Name:** Real-Time Sentiment Analysis
+**Stack:** Python · PyTorch · FastAPI · EvidentlyAI · Prometheus · Grafana · Docker Compose
 
-**What it’s about:**  
-Analyze social media sentiment in real time.
+***
 
-**Skills covered:**
-- Streaming data ingestion using Kafka.
-- Real-time inference serving.
-- System design for high-throughput, low-latency workloads.
+## Phase 5 — End-to-End Production Systems
 
----
+### P9 · E-commerce Product Recommender System
 
-## Additional Skills to Integrate Throughout
+Full-stack ML system for product recommendations — data pipeline through serving, with MLflow tracking and CI/CD.
 
-✅ **Testing:** Unit and integration tests for data and model pipelines.  
-✅ **System Design Thinking:** Document architecture diagrams for each project.                         
-✅ **Feature Stores:** Learn tools like Feast for advanced feature management.  
-✅ **Explainability:** SHAP or LIME for monitoring and debugging models.  
-✅ **Documentation:** Maintain clean README and docstrings for every project.
+**Engineering highlights:**
+- Data pipeline: ingestion → validation → feature engineering → training
+- MLflow experiment tracking + model registry with automated promotion
+- FastAPI serving endpoint with A/B experiment routing between model versions
+- GitHub Actions: automated retraining triggered on data or code change
+- Feature store pattern: offline training features + online serving features separated
 
----
+**Stack:** Python · scikit-learn · MLflow · FastAPI · Docker · GitHub Actions
 
-## 📌 Visual Roadmap
+***
 
-![ML Engineering Projects (1)](https://github.com/user-attachments/assets/88d39576-e23d-4ead-a161-4b76caa92916)
+### P10 · ML Platform Capstone
 
+A unified ML platform wiring together every layer built across this repository — the production system a real ML team would operate.
 
----
-## 🛠️ How to Use
+**Engineering highlights:**
+- Single Docker Compose stack: MLflow server + model registry + Prometheus + Grafana + Redis feature cache
+- Automated pipeline: new data in → retrain → evaluate → promote to registry → deploy → monitor
+- Feature store with offline (batch) and online (low-latency) paths
+- Full observability: model performance, data drift, and infrastructure metrics in one Grafana dashboard
+- Architecture diagram documenting every component and data flow
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/aakashsinghgit/ML-Engineering-Projects.git
-   ```
-2. **Navigate to the project folder you want to work on:**
-   ```bash
-   cd ML-Engineering-Projects/projects/<project-folder-name>
-   ```
-3. **Follow the individual project's README or instructions for setup, dependencies, and usage.**
+**Stack:** Python · MLflow · FastAPI · Feast · EvidentlyAI · Prometheus · Grafana · Docker Compose · GitHub Actions
 
-## 🏗️ Contribution
+***
 
-Feel free to fork, open issues, or submit pull requests for improvements or new project ideas!
+## 🛠️ Tech Stack Across This Repository
 
-## 📄 License
+| Category | Tools |
+| :--- | :--- |
+| **ML Frameworks** | scikit-learn, PyTorch, XGBoost, LightGBM |
+| **Serving** | FastAPI, Flask, Pydantic |
+| **Experiment Tracking** | MLflow, Weights & Biases |
+| **Containerisation** | Docker, Docker Compose |
+| **Orchestration** | Kubernetes, Helm, Azure AKS |
+| **CI/CD** | GitHub Actions |
+| **Monitoring** | EvidentlyAI, Prometheus, Grafana |
+| **Feature Store** | Feast, Redis |
+| **Data Validation** | Great Expectations |
+| **Load Testing** | Locust |
 
-This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+***
 
----
-*Maintained by [aakashsinghgit](https://github.com/aakashsinghgit)*
+## 🔗 Portfolio
+
+| | Link |
+| :--- | :--- |
+| 🌐 Portfolio Site | *Coming soon* |
+| 💼 LinkedIn | *Add link* |
+| 🤖 AI Engineering Projects | *Coming soon* |
+| 🧠 Deep Learning Projects | *Coming soon* |
