@@ -36,16 +36,16 @@ class MLflowTracker:
         self.logger = get_logger("mlflow_tracker")
         self.experiment_name = experiment_name
         
-        # Set up MLflow tracking - sqlite store at project root so the UI
-        # (started with `mlflow ui --backend-store-uri sqlite:///mlflow.db`
-        # from the P3 folder) and this script share the same store.
-        if tracking_uri:
-            mlflow.set_tracking_uri(tracking_uri)
+        # Set up MLflow tracking.
+        # Prefer the environment variable if the user has started an MLflow server.
+        effective_uri = tracking_uri or os.environ.get("MLFLOW_TRACKING_URI")
+        if effective_uri:
+            mlflow.set_tracking_uri(effective_uri)
         else:
             project_root = get_project_root()
             db_path = (project_root / "mlflow.db").as_posix()
             mlflow.set_tracking_uri(f"sqlite:///{db_path}")
-        
+
         self.logger.info(f"MLflow tracking URI: {mlflow.get_tracking_uri()}")
         
         # Create or get experiment

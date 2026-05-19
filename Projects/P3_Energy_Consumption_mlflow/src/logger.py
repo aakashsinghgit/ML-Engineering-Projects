@@ -35,10 +35,10 @@ class Logger:
         
         # Set format
         self._setup_formatter()
-    
+
     def _create_logs_directory(self) -> Path:
         """Create logs directory if it doesn't exist."""
-        project_root = Path(__file__).resolve().parents[2]
+        project_root = Path(__file__).resolve().parents[1]
         logs_dir = project_root / "artifacts" / "logs"
         logs_dir.mkdir(parents=True, exist_ok=True)
         return logs_dir
@@ -147,3 +147,15 @@ def log_warning(message: str):
 def log_debug(message: str):
     """Quick debug logging."""
     logger.debug(message)
+
+# Commented below, only used for unti testing logger functionality
+"""
+if __name__ == "__main__":
+    test_logger = Logger("logger_self_test", log_level="DEBUG")
+    test_logger.debug("Logger self-test: debug")
+    test_logger.info("Logger self-test: info")
+    test_logger.warning("Logger self-test: warning")
+    test_logger.error("Logger self-test: error")
+
+    print(f"Logger self-test completed. Log file written to: {test_logger.logs_dir}")
+"""
