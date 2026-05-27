@@ -11,6 +11,8 @@ from typing import Any, Dict, List, Optional, Union
 import pandas as pd
 import numpy as np
 from datetime import datetime
+import requests
+import tempfile
 
 # Import our custom modules
 from logger import get_logger
@@ -39,6 +41,17 @@ class MLflowTracker:
         # Set up MLflow tracking.
         # Prefer the environment variable if the user has started an MLflow server.
         effective_uri = tracking_uri or os.environ.get("MLFLOW_TRACKING_URI")
+        
+        if not effective_uri:
+            # Try to detect a running MLflow server at localhost:5000
+            try:
+                response = requests.get("http://127.0.0.1:5000/api/2.0/mlflow/version", timeout=2)
+                if response.status_code == 200:
+                    effective_uri = "http://127.0.0.1:5000"
+                    self.logger.info("Detected running MLflow server at http://127.0.0.1:5000")
+            except (requests.exceptions.ConnectionError, requests.exceptions.Timeout):
+                pass
+        
         if effective_uri:
             mlflow.set_tracking_uri(effective_uri)
         else:
@@ -212,14 +225,19 @@ class MLflowTracker:
     
     def log_figure(self, figure, figure_name: str) -> None:
         """
-        Log a matplotlib figure.
-        
+        Log a matplotlib figure by saving locally and logging as artifact.
+
         Args:
             figure: Matplotlib figure object
             figure_name (str): Name for the figure
         """
         try:
-            mlflow.log_figure(figure, figure_name)
+            # Save figure to a temporary location
+            with tempfile.TemporaryDirectory() as tmpdir:
+                figure_path = Path(tmpdir) / figure_name
+                figure.savefig(str(figure_path), dpi=100, bbox_inches='tight')
+                # Log as artifact instead of using mlflow.log_figure
+                mlflow.log_artifact(str(figure_path), artifact_path="figures")
             self.logger.info(f"Logged figure: {figure_name}")
         except Exception as e:
             raise MLflowException(

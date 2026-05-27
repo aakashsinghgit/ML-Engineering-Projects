@@ -1,0 +1,31 @@
+# Ignore Python virtual environment
+venv/
+
+# Ignore local MLflow artifacts and experiment data
+mlruns/
+mlartifacts/
+mlflow.db
+
+# Ignore large local data and output folders
+artifacts/
+notebooks/
+
+# Ignore version control metadata
+.git/
+.gitignore
+
+# Ignore temporary and editor files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.swo
+*.log
+*.tmp
+*.bak
+*.DS_Store
+
+# Ignore IDE/editor folders
+.vscode/
+.idea/

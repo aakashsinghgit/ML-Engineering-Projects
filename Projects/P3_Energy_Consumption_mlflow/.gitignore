@@ -21,3 +21,6 @@ artifacts/logs/
 *.h5
 *.hdf5
 *.parquet
+
+# Local narrative documentation
+technical_narrative.md
