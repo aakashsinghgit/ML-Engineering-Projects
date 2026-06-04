@@ -24,3 +24,5 @@ artifacts/logs/
 
 # Local narrative documentation
 technical_narrative.md
+.env
+

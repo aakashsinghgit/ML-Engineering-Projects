@@ -15,6 +15,9 @@ Build a machine learning pipeline to predict household energy consumption and ma
 - Modular code structure with clear separation of data, features, and models.
 - MLflow integration for tracking parameters, metrics, and artifacts.
 - Model registry for version control and reproducibility.
+- **FastAPI Serving UI:** A lightweight web interface to trigger training, evaluation, and predictions.
+- **Dockerized Infrastructure:** Fully containerized stack using Docker Compose (FastAPI, MLflow, PostgreSQL, MinIO).
+- **Automated Testing:** Comprehensive unit tests built with `pytest` for robust API validation.
 
 ---
 
@@ -25,8 +28,11 @@ P3-energy-consumption-mlflow/
 ├── data/                # Raw and processed datasets
 ├── notebooks/           # Exploratory data analysis and prototyping
 ├── src/                 # Source code (data, features, models, pipelines)
-├── mlruns/              # MLflow tracking directory
+├── tests/               # Automated pytest suite for the API
+├── docker/              # Docker configurations and setup scripts
+├── mlruns/              # MLflow tracking directory (local)
 ├── requirements.txt     # Project dependencies
+├── docker-compose.yml   # Docker Compose stack configuration
 ├── README.md            # Project documentation
 └── ...
 ```
@@ -50,12 +56,27 @@ P3-energy-consumption-mlflow/
    - Use the [UCI Individual household electric power consumption dataset](https://archive.ics.uci.edu/ml/datasets/individual+household+electric+power+consumption).
    - Place the raw data in the `data/` folder.
 
-4. **Run MLflow UI (optional):**
+4. **Run the Full Stack via Docker (Recommended):**
    ```bash
-   mlflow ui
+   docker compose up -d --build
    ```
-   Visit [http://localhost:5000](http://localhost:5000) to view experiment tracking.
+   - **Serving UI:** Visit [http://localhost:8000](http://localhost:8000)
+   - **MLflow UI:** Visit [http://localhost:5000](http://localhost:5000)
 
+5. **Run Locally (Alternative):**
+   - Start the API server:
+     ```bash
+     uvicorn src.serving.api:app --reload
+     ```
+   - Start MLflow UI:
+     ```bash
+     mlflow ui --backend-store-uri sqlite:///mlflow.db
+     ```
+
+6. **Run Tests:**
+   ```bash
+   pytest tests/ -v
+   ```
 ---
 
 ## 🛠️ How to Use

@@ -78,11 +78,13 @@ python src/experiment_template.py
 
 ## 📊 MLflow UI Access
 
-After running experiments, you can view results in the MLflow UI:
+After running experiments, you can view results in the MLflow UI. 
+If you are using Docker Compose, the UI will be automatically available at `http://localhost:5000`.
 
+Alternatively, if running locally without Docker:
 ```bash
 # Start MLflow UI (from project root)
-mlflow ui --backend-store-uri file://artifacts/mlflow
+mlflow ui --backend-store-uri sqlite:///mlflow.db
 ```
 
 Then open: http://localhost:5000

@@ -1,0 +1,22 @@
+artifact_path: file:C:/Users/admin/Documents/Git/ML-Engineering-Projects/Projects/P3_Energy_Consumption_mlflow/mlruns/6/models/m-96c7c5c138df47ff86a131c324d210c2/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.7
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+mlflow_version: 3.3.2
+model_id: m-96c7c5c138df47ff86a131c324d210c2
+model_size_bytes: 870
+model_uuid: m-96c7c5c138df47ff86a131c324d210c2
+prompts: null
+run_id: af6c74811c924c38958224b7403de588
+utc_time_created: '2026-05-27 07:48:46.574369'

@@ -189,7 +189,11 @@ def main() -> None:
     logger.info("Starting training pipeline")
 
     try:
-        result = TrainPipeline().run(model_name="random_forest")
+        result = TrainPipeline().run(
+            model_name="linear_regression",
+            tune = False,
+            feature_set="lag_only",
+            )
         logger.info(f"Training pipeline completed successfully: {result}")
     except Exception as exc:
         logger.error(f"Training pipeline failed: {exc}")
@@ -198,3 +202,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+    # Quick tuning test. Keep it commented when not testing.

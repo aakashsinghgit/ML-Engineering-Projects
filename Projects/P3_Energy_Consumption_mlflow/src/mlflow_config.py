@@ -5,15 +5,17 @@ MLflow configuration settings for the Energy Consumption ML pipeline.
 from pathlib import Path
 from typing import Dict, Any
 
+import os
+
 # Project paths
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 MLFLOW_DB = PROJECT_ROOT / "mlflow.db"
 MODELS_DIR = PROJECT_ROOT / "artifacts" / "models"
 EXPERIMENTS_DIR = PROJECT_ROOT / "artifacts" / "experiments"
 
-# MLflow settings - use sqlite backend to match `mlflow ui --backend-store-uri sqlite:///mlflow.db`
+# MLflow settings - use sqlite backend by default, but respect environment override
 MLFLOW_CONFIG = {
-    "tracking_uri": f"sqlite:///{MLFLOW_DB.as_posix()}",
+    "tracking_uri": os.environ.get("MLFLOW_TRACKING_URI", f"sqlite:///{MLFLOW_DB.as_posix()}"),
     "experiment_name": "energy_consumption_forecasting",
     "default_tags": {
         "project": "energy_consumption",

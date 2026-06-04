@@ -256,18 +256,16 @@ class MLflowTracker:
             format (str): Format to save (csv, parquet, json)
         """
         try:
-            if format == "csv":
-                mlflow.log_table(df, df_name)
-            else:
-                # Save to temporary file and log as artifact
-                temp_path = Path(f"/tmp/{df_name}.{format}")
-                if format == "parquet":
+            with tempfile.TemporaryDirectory() as tmpdir:
+                temp_path = Path(tmpdir) / f"{df_name}.{format}"
+                if format == "csv":
+                    df.to_csv(temp_path, index=False)
+                elif format == "parquet":
                     df.to_parquet(temp_path)
                 elif format == "json":
                     df.to_json(temp_path)
                 
-                mlflow.log_artifact(str(temp_path), df_name)
-                temp_path.unlink()  # Clean up temp file
+                mlflow.log_artifact(str(temp_path))
             
             self.logger.info(f"Logged DataFrame: {df_name} ({format})")
         except Exception as e:

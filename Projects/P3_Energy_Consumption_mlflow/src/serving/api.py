@@ -1,105 +1,3 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-import subprocess
-import threading
-import time
-from typing import Dict, Any
-from pathlib import Path
-
-app = FastAPI(title="MLflow Dev API")
-
-jobs: Dict[int, Dict[str, Any]] = {}
-jobs_lock = threading.Lock()
-
-
-class JobRequest(BaseModel):
-    script: str = ""  # relative path to script to run
-
-
-@app.get("/health")
-def health():
-    return {"status": "ok"}
-
-
-def _start_process(cmd: list) -> int:
-    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    pid = proc.pid
-    with jobs_lock:
-        jobs[pid] = {
-            "pid": pid,
-            "cmd": cmd,
-            "started_at": time.time(),
-            "returncode": None,
-            "stdout": None,
-            "stderr": None,
-        }
-
-    def _wait_and_record(p, pid_):
-        out, err = p.communicate()
-        with jobs_lock:
-            jobs[pid_]["returncode"] = p.returncode
-            try:
-                jobs[pid_]["stdout"] = out.decode(errors="replace")
-            except Exception:
-                jobs[pid_]["stdout"] = None
-            try:
-                jobs[pid_]["stderr"] = err.decode(errors="replace")
-            except Exception:
-                jobs[pid_]["stderr"] = None
-
-    t = threading.Thread(target=_wait_and_record, args=(proc, pid), daemon=True)
-    t.start()
-    return pid
-
-
-@app.post("/jobs/train")
-def run_train(req: JobRequest = None):
-    # default to baseline experiment if script not provided
-    script = req.script if req and req.script.strip() else "src/experiments/baseline_experiment.py"
-    path = Path(script)
-    if not path.exists():
-        raise HTTPException(status_code=400, detail=f"Script not found: {script}")
-    cmd = ["python", script]
-    pid = _start_process(cmd)
-    return {"pid": pid, "script": script}
-
-
-@app.post("/jobs/evaluate")
-def run_evaluate(req: JobRequest = None):
-    script = req.script if req and req.script.strip() else "src/experiments/model_comparison_experiment.py"
-    path = Path(script)
-    if not path.exists():
-        raise HTTPException(status_code=400, detail=f"Script not found: {script}")
-    pid = _start_process(["python", script])
-    return {"pid": pid, "script": script}
-
-
-@app.post("/jobs/predict")
-def run_predict(req: JobRequest):
-    if not req or not req.script:
-        raise HTTPException(status_code=400, detail="Provide script path for prediction")
-    script = req.script
-    path = Path(script)
-    if not path.exists():
-        raise HTTPException(status_code=400, detail=f"Script not found: {script}")
-    pid = _start_process(["python", script])
-    return {"pid": pid, "script": script}
-
-
-@app.get("/jobs")
-def list_jobs():
-    with jobs_lock:
-        # return a shallow copy to avoid mutation issues
-        return {pid: dict(info) for pid, info in jobs.items()}
-
-
-@app.get("/jobs/{pid}")
-def job_status(pid: int):
-    with jobs_lock:
-        info = jobs.get(pid)
-        if not info:
-            raise HTTPException(status_code=404, detail="Job not found")
-        return info
 """FastAPI serving application for ML pipeline orchestration."""
 
 import sys
@@ -168,14 +66,6 @@ class PredictRequest(BaseModel):
     model_file: Optional[str] = None
     feature_set: str = "all"
 
-class EvaluateRequest(BaseModel):
-    validation_data_file: Optional[str] = None
-    model_file: Optional[str] = None
-
-class PredictRequest(BaseModel):
-    input_data_file: str
-    output_file: Optional[str] = None
-    model_file: Optional[str] = None
 
 class StatusResponse(BaseModel):
     last_training_status: str
@@ -346,8 +236,8 @@ async def predict(request: PredictRequest):
             local_model_path=request.model_file,
             feature_set=request.feature_set,
         )
-        
-        logger.info(f"Predictions generated: shape {predictions.shape}")
+        shape = getattr(predictions, "shape", (len(predictions),))
+        logger.info(f"Predictions generated: shape {shape}")
         return {
             "status": "success",
             "message": f"Predictions generated for {len(predictions)} samples",

@@ -6,9 +6,14 @@ mlruns/
 mlartifacts/
 mlflow.db
 
-# Ignore large local data and output folders
-artifacts/
+# Ignore large raw data but keep ingested data and models
+artifacts/data_raw/
+artifacts/logs/
+.env
+tests/
+*.md
 notebooks/
+
 
 # Ignore version control metadata
 .git/
